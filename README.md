@@ -1,2 +1,8 @@
-# kensaku_hono
-kensakuサイトのapiをHonoを使用しCloudflare Workdersで開発
+```
+npm install
+npm run dev
+```
+
+```
+npm run deploy
+```
