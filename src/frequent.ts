@@ -8,86 +8,86 @@ export const frequents: Frequent[] = [
   {
     id: 1,
     name: "John Doe",
-    word: "mountain"
+    word: "horizon",
   },
   {
     id: 2,
     name: "Jane Smith",
-    word: "sky"
+    word: "shooting star",
   },
   {
     id: 3,
     name: "Alex saisa",
-    word: "game"
+    word: "banquet",
   },
   {
     id: 4,
     name: "yamashita takashi",
-    word: "rural"
+    word: "urban",
   },
   {
     id: 5,
     name: "tachinaba",
-    word: "park"
+    word: "orchard",
   },
   {
     id: 6,
     name: "uchida mikwe",
-    word: "hill"
+    word: "garment",
   },
   {
     id: 7,
     name: "uchida mikwe",
-    word: "road"
+    word: "offense",
   },
   {
     id: 8,
     name: "uchida mikwe",
-    word: "island"
+    word: "island",
   },
   {
     id: 9,
     name: "uchida mikwe",
-    word: "border"
+    word: "border",
   },
   {
     id: 10,
     name: "mutumutu",
-    word: "bird"
+    word: "bird",
   },
   {
     id: 11,
     name: "takahashi",
-    word: "cake"
+    word: "cake",
   },
   {
     id: 12,
     name: "nakamura",
-    word: "block"
+    word: "block",
   },
   {
     id: 13,
     name: "iishima",
-    word: "toy"
+    word: "toy",
   },
   {
     id: 14,
     name: "nakai",
-    word: "large"
+    word: "large",
   },
   {
     id: 15,
     name: "takahashi",
-    word: "water"
+    word: "water",
   },
   {
     id: 17,
     name: "takahashi",
-    word: "quick"
+    word: "quick",
   },
   {
     id: 18,
     name: "yamaki",
-    word: "tool"
-  }
+    word: "tool",
+  },
 ];

@@ -1,7 +1,17 @@
 import { Hono } from 'hono'
+import { cors } from "hono/cors";
 import { frequents } from "./frequent"
 
 const app = new Hono()
+
+app.use(
+  "*",
+  cors({
+    origin: ["http://localhost:5173", "https://kensaku-xy2e.vercel.app"],
+    maxAge: 60000,
+    credentials: true,
+  })
+);
 
 app.get('/', (c) => {
   return c.json({ msg: 'Hello Hono!' });
