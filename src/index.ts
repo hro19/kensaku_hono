@@ -1,9 +1,13 @@
-import { Hono } from 'hono'
+import { Hono } from 'hono';
+import { logger } from "hono/logger";
 import { cors } from "hono/cors";
 import { setCookie } from 'hono/cookie'
-import { frequents } from "./frequent"
+import { frequents } from "./frequent";
+import { Frequent, FormDataFrequent } from "./types/frequent";
 
 const app = new Hono()
+
+app.use("*", logger());
 
 app.use(
   "*",
@@ -28,14 +32,14 @@ app.get("/api/frequent", (c) => {
 });
 
 app.post("/api/frequent", async (c) => {
-
   const maxId: number = Math.max(...frequents.map((frequent) => frequent.id));
 
-  const { name, word } = await c.req.json();
-  const newTodo = {id: Number(maxId + 1),name,word};
+  const formData: FormDataFrequent = await c.req.json();
+  const newTodo: Frequent = { id: Number(maxId + 1), ...formData };
   // console.log(newTodo);
-  const updatedFrequents = [...frequents, newTodo];
 
+  const updatedFrequents: Frequent[] = [...frequents, newTodo];
+  // console.log(updatedFrequents);
   return c.json(newTodo);
 });
 

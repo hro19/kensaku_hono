@@ -1,8 +1,4 @@
-type Frequent = {
-  id: number;
-  name: string;
-  word: string;
-}
+import{ Frequent } from "./types/frequent"
 
 export const frequents: Frequent[] = [
   {
