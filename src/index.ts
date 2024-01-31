@@ -1,9 +1,11 @@
 import { Hono } from 'hono';
 import { logger } from "hono/logger";
 import { cors } from "hono/cors";
-import { setCookie } from 'hono/cookie'
+import { setCookie } from 'hono/cookie';
 import { frequents } from "./frequent";
 import { Frequent, FormDataFrequent } from "./types/frequent";
+import { zValidator } from "@hono/zod-validator";
+import { frequentSchema } from './zod/frequentSchema';
 
 const app = new Hono()
 
@@ -31,7 +33,7 @@ app.get("/api/frequent", (c) => {
   return c.json(frequents);
 });
 
-app.post("/api/frequent", async (c) => {
+app.post("/api/frequent", zValidator("json", frequentSchema), async (c) => {
   const maxId: number = Math.max(...frequents.map((frequent) => frequent.id));
 
   const formData: FormDataFrequent = await c.req.json();
